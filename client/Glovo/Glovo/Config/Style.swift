@@ -9,5 +9,6 @@
 import UIKit
 
 struct Style {
-  let DEFAULT_SPACE: CGFloat = 8
+  static let DEFAULT_SPACE: CGFloat = 8
+  static let POLYGON_ALPHA: CGFloat = 0.4
 }

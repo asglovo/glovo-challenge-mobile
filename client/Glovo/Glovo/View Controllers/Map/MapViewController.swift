@@ -9,11 +9,14 @@
 import UIKit
 import SnapKit
 import GoogleMaps
+import RxSwift
 
 final class MapViewController: BaseViewController {
   private var mapView: GMSMapView!
   private var camera: GMSCameraPosition!
   private var myMarker: GMSMarker!
+  
+  private let viewModel = MapViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +29,24 @@ final class MapViewController: BaseViewController {
     mapView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+    
+    viewModel.getCities()
+    .observeOn(MainScheduler.instance)
+      .subscribe(onSuccess: { [weak self] cities in
+        guard let `self` = self, let cities = cities else { return }
+        
+        for city in cities {
+          let fillColor = UIColor().randomColor().withAlphaComponent(Style.POLYGON_ALPHA)
+          
+          for workingArea in city.workingAreas {
+            let path = GMSPath(fromEncodedPath: workingArea)
+            
+            let polygon = GMSPolygon(path: path)
+            polygon.map = self.mapView
+            polygon.fillColor = fillColor
+          }
+        }
+      }).disposed(by: disposeBag)
   }
   
   override func viewDidAppear(_ animated: Bool) {

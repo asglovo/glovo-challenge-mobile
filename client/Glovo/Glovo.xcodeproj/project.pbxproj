@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F03BA36B5757B729F8BE4F8 /* Pods_GlovoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFFB28803A0EC8A66D4BCF7 /* Pods_GlovoTests.framework */; };
+		424471E320E580F40010C20C /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424471E220E580F40010C20C /* City.swift */; };
+		424471E920E58FDB0010C20C /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424471E820E58FDB0010C20C /* UIColor+Random.swift */; };
 		4249AFA520E2C2BA005C795C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4249AFA420E2C2BA005C795C /* AppDelegate.swift */; };
 		4249AFAA20E2C2BA005C795C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4249AFA820E2C2BA005C795C /* Main.storyboard */; };
 		4249AFAC20E2C2BB005C795C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4249AFAB20E2C2BB005C795C /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 		224A1F164DE01CA80B061E61 /* Pods_GlovoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlovoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397542534F122031813DF5E4 /* Pods-GlovoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlovoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlovoTests/Pods-GlovoTests.release.xcconfig"; sourceTree = "<group>"; };
 		3AFFB28803A0EC8A66D4BCF7 /* Pods_GlovoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlovoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		424471E220E580F40010C20C /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		424471E820E58FDB0010C20C /* UIColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
 		4249AFA120E2C2BA005C795C /* Glovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4249AFA420E2C2BA005C795C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4249AFA920E2C2BA005C795C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				42F0E93220E2D213003E72D5 /* Models */,
 				4249AFD920E2C344005C795C /* View Controllers */,
 				4249AFD320E2C30E005C795C /* Resources */,
+				424471E820E58FDB0010C20C /* UIColor+Random.swift */,
 			);
 			path = Glovo;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				42F0E93020E2D210003E72D5 /* Country.swift */,
+				424471E220E580F40010C20C /* City.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,11 +493,13 @@
 			files = (
 				4249AFA520E2C2BA005C795C /* AppDelegate.swift in Sources */,
 				42F0E93620E2D2BE003E72D5 /* BaseViewModel.swift in Sources */,
+				424471E320E580F40010C20C /* City.swift in Sources */,
 				4249AFD520E2C334005C795C /* MapViewController.swift in Sources */,
 				42F0E92A20E2C807003E72D5 /* LocationManager.swift in Sources */,
 				4249AFDD20E2C375005C795C /* GlovoAPIService.swift in Sources */,
 				42F0E93120E2D210003E72D5 /* Country.swift in Sources */,
 				42F0E93420E2D27B003E72D5 /* BaseViewController.swift in Sources */,
+				424471E920E58FDB0010C20C /* UIColor+Random.swift in Sources */,
 				42F0E92F20E2CA96003E72D5 /* Constants.swift in Sources */,
 				4249AFD720E2C33C005C795C /* MapViewModel.swift in Sources */,
 				42F0E92D20E2C93E003E72D5 /* Config.swift in Sources */,

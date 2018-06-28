@@ -12,7 +12,8 @@ import RxAlamofire
 import Alamofire
 
 protocol GlovoAPIServiceType {
-  
+  func getCountries() -> Single<[Country]?>
+  func getCities() -> Single<[City]?>
 }
 
 enum Endpoint: String {
@@ -38,8 +39,16 @@ final class GlovoAPIService: GlovoAPIServiceType {
   private let headers: [String: String] = ["Content-Type": "application/json"]
   private var encoding = JSONEncoding.default
   
+  func getCountries() -> Single<[Country]?> {
+    return request(method: .get, url: Endpoint.countries.url)
+  }
+  
+  func getCities() -> Single<[City]?> {
+    return request(method: .get, url: Endpoint.cities.url)
+  }
+  
   private func request<T: Codable>(method: HTTPMethod, url: URL, parameters: [String: AnyObject]? = nil) -> Single<T?> {
-    return manager.rx.responseString(.post, url, parameters: parameters, encoding: encoding, headers: headers)
+    return manager.rx.responseString(method, url, parameters: parameters, encoding: encoding, headers: headers)
       .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1)))
       .asSingle()
       .flatMap { json -> Single<T?> in
